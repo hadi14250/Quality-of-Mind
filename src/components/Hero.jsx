@@ -3,35 +3,51 @@ import './Hero.css';
 
 function Hero() {
   const [isVisible, setIsVisible] = useState(false);
-  const videoRef = useRef(null);
+  const [counters, setCounters] = useState({ transformation: 0, companies: 0 });
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
     setIsVisible(true);
-
-    // Ensure video plays
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.log("Video autoplay prevented:", error);
-      });
-    }
   }, []);
+
+  // Counter animation effect
+  useEffect(() => {
+    if (!isVisible || hasAnimated.current) return;
+    hasAnimated.current = true;
+
+    const duration = 2000; // 2 seconds
+    const transformationTarget = 3;
+    const companiesTarget = 200;
+    const fps = 60;
+    const totalFrames = (duration / 1000) * fps;
+
+    let frame = 0;
+    const interval = setInterval(() => {
+      frame++;
+      const progress = frame / totalFrames;
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+
+      setCounters({
+        transformation: Math.floor(easeOutQuart * transformationTarget),
+        companies: Math.floor(easeOutQuart * companiesTarget),
+      });
+
+      if (frame >= totalFrames) {
+        setCounters({
+          transformation: transformationTarget,
+          companies: companiesTarget,
+        });
+        clearInterval(interval);
+      }
+    }, 1000 / fps);
+
+    return () => clearInterval(interval);
+  }, [isVisible]);
 
   return (
     <section id="home" className="hero">
-      {/* Video Background with Modern Overlay */}
-      <div className="hero-video-container">
-        <video
-          ref={videoRef}
-          className="hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src="/images/hero-video.mp4" type="video/mp4" />
-        </video>
-        <div className="video-overlay"></div>
-        <div className="video-gradient"></div>
+      {/* Animated Background Shapes */}
+      <div className="hero-background">
         <div className="animated-shapes">
           <div className="shape shape-1"></div>
           <div className="shape shape-2"></div>
@@ -64,7 +80,10 @@ function Hero() {
                   <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </button>
-              <button className="cta-secondary">
+              <button
+                className="cta-secondary"
+                onClick={() => window.open('https://www.youtube.com/watch?v=ogYADo1WXyg', '_blank')}
+              >
                 <div className="play-icon">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M3 2L13 8L3 14V2Z" fill="currentColor"/>
@@ -77,7 +96,7 @@ function Hero() {
             <div className="hero-stats">
               <div className="stat-item">
                 <div className="stat-number">
-                  <span className="counter" data-target="3">0</span>
+                  <span className="counter">{counters.transformation}</span>
                   <span className="stat-x">X</span>
                 </div>
                 <div className="stat-label">Deeper transformation in half the time</div>
@@ -85,7 +104,7 @@ function Hero() {
               <div className="stat-divider"></div>
               <div className="stat-item">
                 <div className="stat-number">
-                  <span className="counter" data-target="200">0</span>
+                  <span className="counter">{counters.companies}</span>
                   <span className="stat-plus">+</span>
                 </div>
                 <div className="stat-label">Companies transformed</div>

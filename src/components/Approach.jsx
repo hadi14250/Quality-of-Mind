@@ -3,6 +3,7 @@ import './Approach.css';
 
 function Approach() {
   const sectionRef = useRef(null);
+  const videoRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -10,6 +11,12 @@ function Approach() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          // Ensure video plays when visible
+          if (videoRef.current) {
+            videoRef.current.play().catch(error => {
+              console.log("Video autoplay prevented:", error);
+            });
+          }
         }
       },
       { threshold: 0.1 }
@@ -51,6 +58,49 @@ function Approach() {
 
   return (
     <section id="approach" className="approach" ref={sectionRef}>
+      {/* Video Feature Section */}
+      <div className="video-showcase">
+        <div className="container">
+          <div className={`video-showcase-content ${isVisible ? 'animate-in' : 'loading'}`}>
+            <div className="video-frame">
+              <div className="video-decorative-border"></div>
+              <div className="video-container">
+                <video
+                  ref={videoRef}
+                  className="showcase-video"
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src="/images/video-to-put.mp4" type="video/mp4" />
+                </video>
+                <div className="video-play-overlay">
+                  <button
+                    className="play-button"
+                    onClick={() => window.open('https://www.youtube.com/watch?v=ogYADo1WXyg', '_blank')}
+                    title="Watch on YouTube"
+                  >
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                      <circle cx="32" cy="32" r="32" fill="rgba(201, 87, 78, 0.9)"/>
+                      <path d="M26 20L44 32L26 44V20Z" fill="white"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div className="video-glow"></div>
+            </div>
+            <div className="video-info">
+              <span className="section-tag">Our Story</span>
+              <h3>Discover How the Mind Truly Works</h3>
+              <p>
+                Watch this short video to understand the fundamental principles that create
+                lasting transformation from the inside out.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="container">
         <div className={`approach-header ${isVisible ? 'animate-in' : 'loading'}`}>
           <span className="section-tag">Our Approach</span>
