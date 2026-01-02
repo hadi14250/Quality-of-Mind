@@ -37,6 +37,7 @@ function Navbar() {
             <button onClick={() => scrollToSection('programs')} className="nav-link">Programs</button>
             <button onClick={() => scrollToSection('testimonials')} className="nav-link">Testimonials</button>
             <button onClick={() => scrollToSection('faq')} className="nav-link">FAQ</button>
+            <button onClick={() => scrollToSection('contact')} className="nav-link">Contact</button>
             <button onClick={() => scrollToSection('contact')} className="cta-button">Book a Call</button>
           </div>
 
