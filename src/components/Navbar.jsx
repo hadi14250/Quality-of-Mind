@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import ThemeToggle from './ThemeToggle';
 import './Navbar.css';
 
 function Navbar() {
@@ -25,7 +26,7 @@ function Navbar() {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="navbar-content">
-          <div className="navbar-logo">
+          <div className="navbar-logo" onClick={() => scrollToSection('home')}>
             <img src="/images/Quality Of Mind Transparent logo.svg" alt="Quality of Mind" />
             <span>Quality of Mind</span>
           </div>
@@ -39,15 +40,18 @@ function Navbar() {
             <button onClick={() => scrollToSection('contact')} className="cta-button">Book a Call</button>
           </div>
 
-          <button
-            className="mobile-menu-toggle"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          <div className="navbar-actions">
+            <ThemeToggle />
+            <button
+              className="mobile-menu-toggle"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
       </div>
     </nav>

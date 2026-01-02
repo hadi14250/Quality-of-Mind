@@ -1,0 +1,77 @@
+.theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--accent-red);
+  transform: scale(1.05);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent-red);
+  outline-offset: 2px;
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  background: var(--accent-red);
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(201, 87, 78, 0.4);
+}
+
+/* When in light mode, slide to the right */
+[data-theme='light'] .toggle-slider {
+  transform: translateX(28px);
+}
+
+.toggle-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Mobile adjustments */
+@media (max-width: 968px) {
+  .theme-toggle {
+    width: 56px;
+    height: 30px;
+  }
+
+  .toggle-slider {
+    width: 22px;
+    height: 22px;
+  }
+
+  .toggle-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  [data-theme='light'] .toggle-slider {
+    transform: translateX(26px);
+  }
+}

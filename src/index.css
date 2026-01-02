@@ -5,7 +5,20 @@
 }
 
 :root {
-  /* Quality of Mind Red Theme */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark Theme (Default) */
+:root,
+[data-theme='dark'] {
+  /* Quality of Mind Red Theme - Dark Mode */
   --primary-bg: #0F1419;
   --secondary-bg: #1A1D2E;
   --accent-red: #C9574E;
@@ -16,18 +29,27 @@
   --card-bg: rgba(201, 87, 78, 0.05);
   --border-color: rgba(201, 87, 78, 0.2);
 
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  font-weight: 400;
-
   color-scheme: dark;
   color: var(--text-primary);
   background-color: var(--primary-bg);
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Light Theme */
+[data-theme='light'] {
+  /* Quality of Mind Red Theme - Light Mode */
+  --primary-bg: #FFFFFF;
+  --secondary-bg: #F5F1E8;
+  --accent-red: #C9574E;
+  --accent-red-light: #E07167;
+  --accent-cream: #0F1419;
+  --text-primary: #0F1419;
+  --text-secondary: #4A4A4A;
+  --card-bg: rgba(201, 87, 78, 0.08);
+  --border-color: rgba(201, 87, 78, 0.25);
+
+  color-scheme: light;
+  color: var(--text-primary);
+  background-color: var(--primary-bg);
 }
 
 body {
