@@ -73,6 +73,9 @@
   position: relative;
   overflow: hidden;
   transform-origin: bottom;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
 }
 
 .program-card::before {
@@ -166,6 +169,7 @@
   color: #4A4A4A;
   line-height: 1.6;
   margin-bottom: 1.5rem;
+  flex-grow: 1;
 }
 
 .program-link {
@@ -178,6 +182,7 @@
   padding: 0;
   transition: all 0.3s ease;
   position: relative;
+  margin-top: auto;
 }
 
 .program-link::after {

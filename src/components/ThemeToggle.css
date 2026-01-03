@@ -48,6 +48,7 @@
   height: 16px;
   object-fit: contain;
   transition: transform 0.3s ease;
+  pointer-events: none;
 }
 
 .theme-toggle:hover .toggle-icon {
@@ -73,5 +74,9 @@
 
   [data-theme='light'] .toggle-slider {
     transform: translateX(26px);
+  }
+
+  .theme-toggle:active .toggle-icon {
+    transform: rotate(180deg);
   }
 }
