@@ -44,6 +44,14 @@ function Testimonials() {
     },
   ];
 
+  const clients = [
+    { name: "Marks & Spencer", logo: "/clients/Marks__Spencer_new_logo.svg.png" },
+    { name: "Saudi Aramco", logo: "/clients/Saudi_Aramco_logo_without_star.png" },
+    { name: "Client 3", logo: "/clients/images-Photoroom.png" },
+    { name: "McCann Worldgroup", logo: "/clients/mccann-worldgroup-logo-png_seeklogo-509069-removebg-preview-1.png" },
+    { name: "Pret A Manger", logo: "/clients/pretamanger-logo.svg" },
+  ];
+
   return (
     <section id="testimonials" className="testimonials" ref={sectionRef}>
       <div className="testimonials-logo">
@@ -53,7 +61,7 @@ function Testimonials() {
       <div className="container">
         <div className={`testimonials-header ${isVisible ? 'animate-in' : 'loading'}`}>
           <span className="section-tag">Testimonials</span>
-          <h2>the transformations speak for themselves</h2>
+          <h2 style={{ textTransform: 'none' }}>The transformations speak for themselves</h2>
         </div>
 
         <div className="testimonials-grid">
@@ -83,6 +91,24 @@ function Testimonials() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Clients Showcase */}
+        <div className={`clients-showcase ${isVisible ? 'animate-in' : 'loading'}`}>
+          <div className="clients-header">
+            <h3>Trusted by Leading Organizations</h3>
+          </div>
+          <div className="clients-grid">
+            {clients.map((client, index) => (
+              <div
+                key={index}
+                className="client-logo-wrapper"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <img src={client.logo} alt={client.name} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

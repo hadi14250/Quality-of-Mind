@@ -58,7 +58,7 @@ function Programs() {
       <div className="container">
         <div className={`programs-header ${isVisible ? 'animate-in' : 'loading'}`}>
           <span className="section-tag">Programmes</span>
-          <h2>discover the programme that fits you</h2>
+          <h2>Discover the programme that fits you</h2>
           <p>Choose the path that resonates with where you are and where you want to go</p>
         </div>
 

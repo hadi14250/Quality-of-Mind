@@ -3,20 +3,46 @@ import './Hero.css';
 
 function Hero() {
   const [isVisible, setIsVisible] = useState(false);
-  const [counters, setCounters] = useState({ transformation: 0, companies: 0 });
+  const [counters, setCounters] = useState({ transformation: 0, companies: 100 });
+  const [statsVisible, setStatsVisible] = useState(false);
   const hasAnimated = useRef(false);
+  const statsRef = useRef(null);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
-  // Counter animation effect
+  // Observe when stats section comes into viewport
   useEffect(() => {
-    if (!isVisible || hasAnimated.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          setStatsVisible(true);
+        }
+      },
+      { threshold: 0.5 } // Trigger when 50% of stats are visible
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, []);
+
+  // Counter animation effect - only runs when stats are visible
+  useEffect(() => {
+    if (!statsVisible || hasAnimated.current) return;
     hasAnimated.current = true;
 
     const duration = 2000; // 2 seconds
+    const transformationStart = 0;
     const transformationTarget = 3;
+    const companiesStart = 100;
     const companiesTarget = 200;
     const fps = 60;
     const totalFrames = (duration / 1000) * fps;
@@ -28,8 +54,8 @@ function Hero() {
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
 
       setCounters({
-        transformation: Math.floor(easeOutQuart * transformationTarget),
-        companies: Math.floor(easeOutQuart * companiesTarget),
+        transformation: Math.floor(transformationStart + easeOutQuart * (transformationTarget - transformationStart)),
+        companies: Math.floor(companiesStart + easeOutQuart * (companiesTarget - companiesStart)),
       });
 
       if (frame >= totalFrames) {
@@ -42,7 +68,7 @@ function Hero() {
     }, 1000 / fps);
 
     return () => clearInterval(interval);
-  }, [isVisible]);
+  }, [statsVisible]);
 
   return (
     <section id="home" className="hero">
@@ -93,7 +119,7 @@ function Hero() {
               </button>
             </div>
 
-            <div className="hero-stats">
+            <div className="hero-stats" ref={statsRef}>
               <div className="stat-item">
                 <div className="stat-number">
                   <span className="counter">{counters.transformation}</span>
@@ -132,7 +158,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="scroll-indicator">
+      <div className={`scroll-indicator ${isVisible ? 'visible' : ''}`}>
         <div className="mouse">
           <div className="mouse-wheel"></div>
         </div>

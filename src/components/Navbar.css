@@ -356,4 +356,8 @@
     transform: rotate(-45deg) translate(8px, -8px);
     background: var(--accent-red);
   }
+
+  .navbar-actions {
+    gap: 1.5rem;
+  }
 }

@@ -15,11 +15,25 @@
   grid-template-columns: 1.2fr 1fr;
   gap: 4rem;
   align-items: center;
+  opacity: 0;
+}
+
+.video-showcase-content.animate-in {
+  animation: contentFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes contentFadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 .video-frame {
   position: relative;
-  animation: floatVideo 6s ease-in-out infinite;
+}
+
+.video-showcase-content.animate-in .video-frame {
+  animation: floatVideo 6s ease-in-out infinite 0.5s;
 }
 
 @keyframes floatVideo {
@@ -163,6 +177,19 @@
   margin-bottom: 5rem;
   padding-top: 3rem;
   border-top: 1px solid var(--border-color);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.approach-header.animate-in {
+  animation: headerFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes headerFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .section-tag {
@@ -204,6 +231,19 @@
   position: relative;
   border-radius: 24px;
   overflow: hidden;
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.approach-image.animate-left {
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+@keyframes slideInFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .approach-image img {
@@ -212,6 +252,22 @@
   display: block;
   border-radius: 24px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.approach-benefits {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.approach-benefits.animate-right {
+  animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+@keyframes slideInFromRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .approach-benefits h3 {
@@ -233,6 +289,19 @@
   border-radius: 16px;
   border-left: 4px solid var(--accent-red);
   transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.approach-benefits.animate-right .benefit-item {
+  animation: benefitSlideIn 0.6s ease-out forwards;
+}
+
+@keyframes benefitSlideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .benefit-item:hover {
@@ -254,6 +323,19 @@
 .approach-comparison {
   max-width: 1100px;
   margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.approach-comparison.animate-in {
+  animation: comparisonFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes comparisonFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .approach-comparison > h3 {
@@ -275,6 +357,23 @@
   border-radius: 24px;
   padding: 2.5rem;
   transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.approach-comparison.animate-in .comparison-column {
+  animation: columnSlideIn 0.6s ease-out forwards;
+}
+
+.approach-comparison.animate-in .comparison-column:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+@keyframes columnSlideIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .comparison-column.highlight {

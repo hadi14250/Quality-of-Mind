@@ -104,7 +104,7 @@ function Approach() {
       <div className="container">
         <div className={`approach-header ${isVisible ? 'animate-in' : 'loading'}`}>
           <span className="section-tag">Our Approach</span>
-          <h2>before psychology</h2>
+          <h2 style={{ textTransform: 'none' }}>Before Psychology</h2>
           <p>
             It's not a technique. It's a shift in perception. Understanding how the mind
             works creates lasting transformation from the inside out.

@@ -71,7 +71,7 @@ function Contact() {
       <div className="container">
         <div className={`contact-header ${isVisible ? 'animate-in' : 'loading'}`}>
           <span className="section-tag">Get In Touch</span>
-          <h2>let's start a conversation</h2>
+          <h2 style={{ textTransform: 'none' }}>Let's Start a Conversation</h2>
           <p>
             Ready to transform your organization? Reach out and discover how Quality of Mind
             can help you unlock lasting change.
