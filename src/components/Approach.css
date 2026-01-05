@@ -288,25 +288,35 @@
   border: 1px solid var(--border-color);
   border-radius: 16px;
   border-left: 4px solid var(--accent-red);
-  transition: all 0.3s ease;
   opacity: 0;
-  transform: translateX(20px);
 }
 
 .approach-benefits.animate-right .benefit-item {
   animation: benefitSlideIn 0.6s ease-out forwards;
+  /* Add transition after animation completes */
+  animation-fill-mode: forwards;
 }
 
 @keyframes benefitSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-.benefit-item:hover {
+/* Apply transition only after animation has run */
+.approach-benefits.animate-right .benefit-item {
+  transition: background 0.4s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s ease;
+}
+
+.approach-benefits.animate-right .benefit-item:hover {
   background: rgba(255, 255, 255, 0.05);
   transform: translateX(8px);
+  border-color: var(--accent-red);
 }
 
 .benefit-item h4 {
