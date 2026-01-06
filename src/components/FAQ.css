@@ -1,6 +1,6 @@
 .faq {
   padding: 100px 0;
-  background: var(--accent-cream);
+  background: #0F1419;
 }
 
 .faq-header {
@@ -9,14 +9,14 @@
 }
 
 .faq-header h2 {
-  color: #0F1419;
+  color: #FFFFFF;
   text-transform: lowercase;
   margin-bottom: 1rem;
 }
 
 .faq-header p {
   font-size: 1.125rem;
-  color: #4A4A4A;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .faq-list {
@@ -28,8 +28,8 @@
 }
 
 .faq-item {
-  background: white;
-  border: 2px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -54,12 +54,12 @@
 }
 
 .faq-question:hover {
-  background: var(--card-bg);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .faq-question h3 {
   font-size: 1.125rem;
-  color: #0F1419;
+  color: #FFFFFF;
   font-weight: 600;
   margin: 0;
   flex: 1;
@@ -73,7 +73,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: var(--card-bg);
+  background: rgba(255, 255, 255, 0.1);
   color: var(--accent-red);
   transition: all 0.3s ease;
 }
@@ -105,7 +105,7 @@
 
 .faq-answer p {
   padding: 0 2rem 2rem;
-  color: #4A4A4A;
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.8;
   font-size: 1rem;
 }

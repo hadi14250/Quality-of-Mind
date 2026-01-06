@@ -29,10 +29,17 @@
   font-size: clamp(2.5rem, 5vw, 4rem);
   margin-bottom: 1.5rem;
   text-transform: lowercase;
+}
+
+[data-theme='dark'] .cta-content h2 {
   background: linear-gradient(135deg, #FFFFFF 0%, #E07167 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+[data-theme='light'] .cta-content h2 {
+  color: var(--text-primary);
 }
 
 .cta-content p {
