@@ -10,7 +10,7 @@
 
 .faq-header h2 {
   color: #FFFFFF;
-  text-transform: lowercase;
+  text-transform: none;
   margin-bottom: 1rem;
 }
 

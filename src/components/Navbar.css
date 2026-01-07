@@ -88,6 +88,15 @@
   width: 100%;
 }
 
+.nav-link.active {
+  color: var(--accent-red);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
 .cta-button {
   background: var(--accent-red);
   color: var(--text-primary);
@@ -224,6 +233,16 @@
     border-color: var(--accent-red);
     transform: translateX(8px);
     color: var(--accent-red);
+  }
+
+  .nav-link.active {
+    background: rgba(201, 87, 78, 0.15);
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+  }
+
+  .nav-link.active::before {
+    transform: scaleY(1);
   }
 
   .navbar-menu.active .nav-link {

@@ -8,7 +8,7 @@ function Footer() {
       <section id="contact" className="cta-section">
         <div className="container">
           <div className="cta-content">
-            <h2>let's talk and discuss with us!</h2>
+            <h2>Let's talk and discuss with us!</h2>
             <p>
               Ready to experience transformation? Book a call with us and discover
               how Quality of Mind can help you unlock clarity, performance, and inner peace.

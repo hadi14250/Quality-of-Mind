@@ -90,7 +90,7 @@ function Hero() {
             </div>
 
             <h1 className="hero-title">
-              <span className="line line-1">what if we've been</span>
+              <span className="line line-1">What if we've been</span>
               <span className="line line-2">solving the</span>
               <span className="line line-3 highlight">wrong problem...</span>
             </h1>

@@ -28,7 +28,7 @@
 .cta-content h2 {
   font-size: clamp(2.5rem, 5vw, 4rem);
   margin-bottom: 1.5rem;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 [data-theme='dark'] .cta-content h2 {

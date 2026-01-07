@@ -67,7 +67,7 @@ function FAQ() {
       <div className="container">
         <div className={`faq-header ${isVisible ? 'animate-in' : 'loading'}`}>
           <span className="section-tag">FAQ</span>
-          <h2>going beyond traditional psychology</h2>
+          <h2>Going beyond traditional psychology</h2>
           <p>Common questions about the Quality of Mind approach</p>
         </div>
 
