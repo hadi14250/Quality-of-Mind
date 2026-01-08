@@ -57,11 +57,19 @@ function Approach() {
   ];
 
   return (
-    <section id="approach" className="approach" ref={sectionRef}>
+    <section className="approach" ref={sectionRef}>
       {/* Video Feature Section */}
-      <div className="video-showcase">
+      <div id="our-story" className="video-showcase">
         <div className="container">
           <div className={`video-showcase-content ${isVisible ? 'animate-in' : 'loading'}`}>
+            <div className="video-info">
+              <span className="section-tag">Our Story</span>
+              <h3>Discover How the Mind Truly Works</h3>
+              <p>
+                Watch this short video to understand the fundamental principles that create
+                lasting transformation from the inside out.
+              </p>
+            </div>
             <div className="video-frame">
               <div className="video-decorative-border"></div>
               <div className="video-container">
@@ -89,19 +97,11 @@ function Approach() {
               </div>
               <div className="video-glow"></div>
             </div>
-            <div className="video-info">
-              <span className="section-tag">Our Story</span>
-              <h3>Discover How the Mind Truly Works</h3>
-              <p>
-                Watch this short video to understand the fundamental principles that create
-                lasting transformation from the inside out.
-              </p>
-            </div>
           </div>
         </div>
       </div>
 
-      <div className="container">
+      <div id="approach" className="container">
         <div className={`approach-header ${isVisible ? 'animate-in' : 'loading'}`}>
           <span className="section-tag">Our Approach</span>
           <h2 style={{ textTransform: 'none' }}>Before Psychology</h2>
