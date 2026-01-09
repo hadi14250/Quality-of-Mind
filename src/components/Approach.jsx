@@ -113,7 +113,10 @@ function Approach() {
 
         <div className="approach-content">
           <div className={`approach-image ${isVisible ? 'animate-left' : 'loading'}`}>
-            <img src="/images/3 X Deeper transformation in half the time of conventional methods.png" alt="Deeper transformation" />
+            <img src="/images/super-piers.png" alt="Deeper transformation" />
+            <div className="floating-logo">
+              <img src="/images/Quality Of Mind Transparent logo.svg" alt="Quality of Mind" />
+            </div>
           </div>
 
           <div className={`approach-benefits ${isVisible ? 'animate-right' : 'loading'}`}>
