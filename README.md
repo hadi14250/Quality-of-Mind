@@ -1,21 +1,40 @@
+<div align="center">
+
 # Quality of Mind
 
-A modern, performant React website for **Quality of Mind** — helping people discover a new way to unlock peace of mind and see how the mind truly works for real and lasting change.
+**A new way to unlock peace of mind — and see how the mind truly works for real and lasting change.**
 
-## Overview
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](#license)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
 
-Quality of Mind is a single-page marketing site built with React 19 and Vite. It features smooth scroll-triggered animations, a responsive design, and a clean, modern aesthetic centered around the brand's "Before Psychology" approach.
+</div>
 
-## Tech Stack
+---
 
-- **React 19** — UI library
-- **Vite 7** — build tool & dev server
-- **React Compiler** — automatic memoization for performance
-- **CSS3** — custom properties, GPU-accelerated animations
-- **Intersection Observer API** — scroll-triggered effects
-- **ESLint** — code linting
+## ✨ Overview
 
-## Project Structure
+**Quality of Mind** is a modern, single-page marketing site built with React 19 and Vite. It pairs smooth scroll-triggered animations with a clean, responsive aesthetic — designed around the brand's *"Before Psychology"* approach.
+
+> Performance-first. Accessible by default. Built to feel calm.
+
+---
+
+## 🛠 Tech Stack
+
+| Layer | Tool |
+|---|---|
+| UI Library | **React 19** |
+| Build Tool | **Vite 7** |
+| Performance | **React Compiler** (automatic memoization) |
+| Styling | **CSS3** with custom properties & GPU-accelerated animations |
+| Interactions | **Intersection Observer API** |
+| Quality | **ESLint** |
+
+---
+
+## 📁 Project Structure
 
 ```
 src/
@@ -39,73 +58,80 @@ public/
 └── clients/              # Client-related media
 ```
 
-## Features
+---
 
-- Fade in / up animations on scroll
-- Staggered card reveals
-- Smooth, GPU-accelerated hover transitions
-- Light/dark theme toggle
-- Fully responsive (desktop, tablet, mobile)
-- Lazy-loaded images
-- Single primary CTA per section
-- Accessible focus states and semantic HTML
+## 🎯 Features
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm
-
-### Install
-
-```bash
-npm install
-```
-
-### Development
-
-```bash
-npm run dev
-```
-
-Starts the Vite dev server with hot module replacement.
-
-### Build
-
-```bash
-npm run build
-```
-
-Outputs an optimized production build to `dist/`.
-
-### Preview
-
-```bash
-npm run preview
-```
-
-Serves the production build locally.
-
-### Lint
-
-```bash
-npm run lint
-```
-
-## Responsive Design
-
-- **Desktop** — full grid layouts, side-by-side content
-- **Tablet** — adjusted grids, maintained spacing
-- **Mobile** — single column, stacked layouts, mobile menu
-
-## Brand
-
-- Primary background: dark navy (`#0F1419`)
-- Secondary background: deeper navy (`#1A1D2E`)
-- Accent red: `#C9574E`
-- Accent cream: `#F5F1E8`
+- 🌀 **Fade in / up animations** on scroll
+- 🎬 **Staggered card reveals** for natural rhythm
+- ⚡ **GPU-accelerated** hover transitions
+- 🌗 **Light / dark theme toggle**
+- 📱 **Fully responsive** — desktop, tablet, mobile
+- 🖼 **Lazy-loaded images** for fast initial paint
+- 🎯 Single primary CTA per section
+- ♿ **Accessible** focus states and semantic HTML
 
 ---
 
-Built with focus on performance, accessibility, and modern web design.
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** 18 or higher
+- **npm**
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
+```
+
+The app will be live at `http://localhost:5173` with hot module replacement.
+
+### Available Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the Vite dev server |
+| `npm run build` | Create an optimized production build in `dist/` |
+| `npm run preview` | Serve the production build locally |
+| `npm run lint` | Run ESLint across the project |
+
+---
+
+## 📐 Responsive Design
+
+| Breakpoint | Behavior |
+|---|---|
+| 🖥 **Desktop** | Full grid layouts, side-by-side content |
+| 📱 **Tablet** | Adjusted grids, maintained spacing |
+| 📲 **Mobile** | Single column, stacked layouts, mobile menu |
+
+---
+
+## 🎨 Brand Palette
+
+| Token | Hex | Preview |
+|---|---|---|
+| Primary background | `#0F1419` | ![#0F1419](https://placehold.co/15x15/0F1419/0F1419.png) dark navy |
+| Secondary background | `#1A1D2E` | ![#1A1D2E](https://placehold.co/15x15/1A1D2E/1A1D2E.png) deeper navy |
+| Accent red | `#C9574E` | ![#C9574E](https://placehold.co/15x15/C9574E/C9574E.png) |
+| Accent cream | `#F5F1E8` | ![#F5F1E8](https://placehold.co/15x15/F5F1E8/F5F1E8.png) |
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome. Feel free to open a PR or start a discussion.
+
+---
+
+<div align="center">
+
+Built with focus on **performance**, **accessibility**, and **modern web design**.
+
+</div>
